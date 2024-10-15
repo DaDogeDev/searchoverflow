@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang='en' class=''>
-  <head>
-    <meta charset='UTF-8'>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <title>Search Overflow</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
       p { font-family: "Calibri", cursive; }
-        body {
+      body {
         background-color: #232b2b;
         margin: 200px 40%;
       }
@@ -16,9 +16,9 @@
         width: 300px;
         height: 44px;
         border-radius: 5px;
-        display:flex;
-        flex-direction:row;
-        align-items:center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
       }
 
       input {
@@ -49,41 +49,48 @@
         width: 44px;
         height: 44px;
       }
+
       .image {
-        margins: auto:
+        margin: auto;
+        text-align: center;
+      }
+
+      img {
+        width: 256px; /* Desired size */
+        height: auto; /* Keep aspect ratio */
       }
     </style>
-  </head>
-  <body>
+</head>
+<body>
   <div class="image">
-    <h1><img src="logo.png" alt="SearchOverflow" style="width:128x;height:128px;"></h1>
-  </cdiv>
-  </body>
-  <body>
+    <img src="logo.png" alt="SearchOverflow">
+  </div>
 
-    <center>
+  <center>
     <form role="search" id="form">
       <input type="search" id="query" name="q" placeholder="Search StackOverflow..." aria-label="Search through site content">
       <button>
-        <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
+        <svg viewBox="0 0 1024 1024">
+          <path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path>
+        </svg>
       </button>
     </form>
+
     <script>
       const f = document.getElementById('form');
       const q = document.getElementById('query');
-      const google = 'https://www.google.com/search?q=site%3A+';
+      const duckduckgo = 'https://duckduckgo.com/?q=site%3A+';
       const site = 'stackoverflow.com';
 
       function submitted(event) {
         event.preventDefault();
-        const url = google + site + '+' + q.value;
+        const url = duckduckgo + site + '+' + q.value;
         const win = window.open(url, '_blank');
         win.focus();
       }
 
       f.addEventListener('submit', submitted);
     </script>
-    </center>
-  <center><h1><font face="Calibri" color="white" size="3">Search Overflow is a simple search engine like website for Stack Overflow! Just write a question in the search bar and find answers to your question! To find answers way easier and faster, use this chrome extension, it's free, it's featured and it has a 5 star rating! Get it <a href="https://chromewebstore.google.com/detail/stackoverflow-answer/bmlkdgmiaemiaopodggkhfblhmefimoi">here!</a></font></h1></center>
-  </body>
+  </center>
+</body>
 </html>
